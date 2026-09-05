@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alireza — motion designer and film editor creating memorable motion, edits and visual systems.">
+    <meta name="theme-color" content="#0a090d">
+    <meta property="og:title" content="ALIREZA — Motion Designer & Film Editor"><meta property="og:description" content="Motion engineered for attention, clarity and impact.">
+    <meta property="og:type" content="website"><meta property="og:image" content="{{ og_image }}"><meta property="og:image:alt" content="Portrait of Alireza"><meta name="twitter:card" content="summary_large_image">
+    <title>{% if page_name == 'work' %}Selected Work{% elif page_name == 'about' %}About{% elif page_name == 'services' %}Services{% elif page_name == 'contact' %}Start a Project{% else %}Motion Designer & Film Editor{% endif %} — ALIREZA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}?v=7">
+    <script>document.documentElement.classList.add('js');try{const l=localStorage.getItem('alireza-tech-lang'),t=localStorage.getItem('alireza-tech-theme');if(l==='fa'){document.documentElement.lang='fa';document.documentElement.dir='rtl'}if(t==='light')document.documentElement.dataset.theme='light'}catch(_){}</script>
+</head>
+<body data-page="home" class="single-page">
+    <a class="skip-link" href="#main-content">Skip to content</a><div class="page-wipe" aria-hidden="true"></div><div class="ambient" aria-hidden="true"><i></i><i></i></div>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="#home" aria-label="Alireza home">ALI<span>/</span>REZA</a>
+            <nav class="desktop-nav" aria-label="Primary navigation">
+                <a href="#work"><span>01</span><b data-i18n="navWork">WORK</b></a>
+                <a href="#about"><span>02</span><b data-i18n="navAbout">ABOUT</b></a>
+                <a href="#services"><span>03</span><b data-i18n="navServices">SERVICES</b></a>
+                <a href="#contact"><span>04</span><b data-i18n="navContact">CONTACT</b></a>
+            </nav>
+            <div class="header-actions"><button class="round-button theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false"><i></i></button><button class="language-toggle" type="button" aria-label="Switch language"><span>FA</span></button><button class="round-button menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false"><i></i><i></i></button></div>
+        </header>
+        <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation" aria-hidden="true">
+            <a href="#home"><span>00</span><b data-i18n="navHome">HOME</b></a><a href="#work"><span>01</span><b data-i18n="navWork">WORK</b></a><a href="#about"><span>02</span><b data-i18n="navAbout">ABOUT</b></a><a href="#services"><span>03</span><b data-i18n="navServices">SERVICES</b></a><a href="#contact"><span>04</span><b data-i18n="navContact">CONTACT</b></a>
+        </nav>
+        <main class="site-main" id="main-content">{% block content %}{% endblock %}</main>
+        <footer class="site-footer"><span class="page-number">00<i></i>04</span><a href="mailto:hello@alireza.studio" dir="ltr">HELLO@ALIREZA.STUDIO</a><span>© 2026 ALIREZA</span></footer>
+    </div>
+    {{ site_copy|json_script:"site-copy-data" }}
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="{% static 'js/main.js' %}?v=7" defer></script>
+</body></html>

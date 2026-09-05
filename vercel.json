@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "django",
+  "buildCommand": "python manage.py migrate --noinput",
+  "functions": {
+    "motionfolio/asgi.py": {
+      "maxDuration": 60
+    }
+  }
+}

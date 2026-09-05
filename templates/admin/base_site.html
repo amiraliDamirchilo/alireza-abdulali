@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | ALIREZA Studio Control{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}?v=3">
+{% endblock %}
+
+{% block branding %}
+<div class="studio-brand">
+    <span class="studio-brand__mark">A<span>/</span>R</span>
+    <span class="studio-brand__text"><b>ALIREZA Studio</b><small>CONTROL ROOM</small></span>
+</div>
+{% endblock %}
+
+{% block nav-global %}<a class="view-site" href="/" target="_blank">View portfolio ↗</a>{% endblock %}
