@@ -28,7 +28,7 @@ def env_list(name, default=""):
     return [value.strip() for value in os.environ.get(name, default).split(",") if value.strip()]
 
 
-ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1" if DEBUG else "")
+ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 if ON_VERCEL:
     for name in ("VERCEL_URL", "VERCEL_PROJECT_PRODUCTION_URL", "VERCEL_BRANCH_URL"):
