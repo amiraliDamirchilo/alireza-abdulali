@@ -230,9 +230,24 @@
     });
   }
 
+  function initDeveloperPopup() {
+    const popup = document.querySelector('.developer-popup');
+    if (!popup) return;
+    const close = () => {
+      popup.classList.remove('is-visible');
+      popup.setAttribute('aria-hidden', 'true');
+    };
+    popup.querySelector('.developer-popup-close')?.addEventListener('click', close);
+    window.setTimeout(() => {
+      popup.classList.add('is-visible');
+      popup.setAttribute('aria-hidden', 'false');
+      window.setTimeout(close, 10000);
+    }, 3500);
+  }
+
   setTheme(storage.get('alireza-tech-theme', 'dark'));
   setLanguage(storage.get('alireza-tech-lang', root.lang === 'fa' ? 'fa' : 'en'));
   document.querySelector('.theme-toggle')?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   document.querySelector('.language-toggle')?.addEventListener('click', () => setLanguage(root.lang === 'fa' ? 'en' : 'fa'));
-  initMenu(); initPageTransitions(); initForm(); initWorkFilters(); initSectionNavigation(); initScrollMotion(); animatePageIn();
+  initMenu(); initPageTransitions(); initForm(); initDeveloperPopup(); initWorkFilters(); initSectionNavigation(); initScrollMotion(); animatePageIn();
 })();
