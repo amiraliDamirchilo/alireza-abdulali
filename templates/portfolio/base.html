@@ -30,7 +30,7 @@
             <a href="#home"><span>00</span><b data-i18n="navHome">HOME</b></a><a href="#work"><span>01</span><b data-i18n="navWork">WORK</b></a><a href="#about"><span>02</span><b data-i18n="navAbout">ABOUT</b></a><a href="#services"><span>03</span><b data-i18n="navServices">SERVICES</b></a><a href="#contact"><span>04</span><b data-i18n="navContact">CONTACT</b></a>
         </nav>
         <main class="site-main" id="main-content">{% block content %}{% endblock %}</main>
-        <footer class="site-footer"><span class="page-number">00<i></i>04</span><a href="mailto:hello@alireza.studio" dir="ltr">HELLO@ALIREZA.STUDIO</a><span>© 2026 ALIREZA</span></footer>
+        <footer class="site-footer"><span class="page-number">00<i></i>04</span><a class="footer-email" href="mailto:hello@alireza.studio" dir="ltr">HELLO@ALIREZA.STUDIO</a><a class="footer-credit" href="https://amirdamir.com" dir="ltr">designed &amp; developed by amirdamir.com</a><span>© 2026 ALIREZA</span></footer>
     </div>
     {{ site_copy|json_script:"site-copy-data" }}
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script><script src="{% static 'js/main.js' %}?v=7" defer></script>
